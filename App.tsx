@@ -1,21 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { registerRootComponent } from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Root } from './src/routes/Routes';
+import HomeScreen from './src/screens/HomeScreen';
+import NutritionScreen from './src/screens/NutritionScreen';
+import QuizScreen from './src/screens/QuizScreen';
+import TrainingScreen from './src/screens/TrainingScreen';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Root.Navigator>
+        <Root.Screen name='Home' component={HomeScreen} />
+        <Root.Screen name='Nutrition' component={NutritionScreen} />
+        <Root.Screen name='Training' component={TrainingScreen} />
+        <Root.Screen name='Quiz' component={QuizScreen} />
+      </Root.Navigator>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};

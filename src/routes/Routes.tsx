@@ -3,8 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 type RootParamList = {
   Home: undefined;
   Quiz: undefined;
-  NutritionFundamentals: undefined;
-  TrainingFundamentals: undefined;
+  Nutrition: undefined;
+  Training: undefined;
 };
 
-const Root = createStackNavigator<RootParamList>();
+export const Root = createStackNavigator<RootParamList>();
