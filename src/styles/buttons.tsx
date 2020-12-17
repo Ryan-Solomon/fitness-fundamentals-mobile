@@ -35,6 +35,7 @@ type TButtonProps = {
   buttonColor: string;
   textColor: string;
   fontSize: string;
+  onPress: () => void;
 };
 
 export const StyledButton: FC<Partial<TButtonProps>> = ({
@@ -45,9 +46,15 @@ export const StyledButton: FC<Partial<TButtonProps>> = ({
   buttonColor = '#333',
   textColor = '#fff',
   fontSize = '16px',
+  onPress,
 }) => {
   return (
-    <SButton padding={padding} width={width} buttonColor={buttonColor}>
+    <SButton
+      onPress={onPress}
+      padding={padding}
+      width={width}
+      buttonColor={buttonColor}
+    >
       <SButtonText
         textAlign={textAlign}
         textColor={textColor}
